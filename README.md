@@ -3,9 +3,9 @@
 This repository contains various **programs done in C** for **CS50x 2020 Course**.
 
 ## Table of Contents
-- Problem Set 0:
+- **Problem Set 0**:
     - Simple **Scratch** game named "Avoid Cars",
-- Problem Set 1:
+- **Problem Set 1**:
     - "Hello World!" in C,
     - both versions of "Mario" program:
         - less, pyramid using hashes, ex.
@@ -48,7 +48,7 @@ This repository contains various **programs done in C** for **CS50x 2020 Course*
         Number: 4003600000000014
         VISA 
         ```
-- Problem Set 2:
+- **Problem Set 2**:
     - "Readability" program:
         - program computes the approximate grade level needed to comprehend some text using Coleman-Liau index, ex.
         ```
@@ -63,7 +63,7 @@ This repository contains various **programs done in C** for **CS50x 2020 Course*
         plaintext:  HELLO
         ciphertext: URYYB
         ```
-- Problem Set 3:
+- **Problem Set 3**:
     - "Plurality" program:
         - program that runs a plurality election, ex.
         ```
@@ -102,7 +102,7 @@ This repository contains various **programs done in C** for **CS50x 2020 Course*
 
         Charlie
         ```
-- Problem Set 4:
+- **Problem Set 4**:
     - less version of "Filter" program:
         - program that applies filters (grayscale, sepia, reflect, blur) to BMPs, ex.
         ```
