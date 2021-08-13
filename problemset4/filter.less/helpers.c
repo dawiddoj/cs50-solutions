@@ -26,11 +26,9 @@ void sepia(int height, int width, RGBTRIPLE image[height][width])
     {
         for (int j = 0; j < width; j++)
         {
-            // using round from math.h and formula for sepia colors
             int sepiaRed, sepiaGreen, sepiaBlue;
             sepiaRed = round((float)(.393 * image[i][j].rgbtRed) + (float)(.769 * image[i][j].rgbtGreen) + 
                              (float)(.189 * image[i][j].rgbtBlue));
-            // 0xff = white, when value is bigger than 0xff it sets it to max = 0xff
             if (sepiaRed > 0xFF)
             {
                 sepiaRed = 0xFF;
@@ -62,7 +60,6 @@ void reflect(int height, int width, RGBTRIPLE image[height][width])
     {
         for (int j = 0; j < width / 2; j++)
         {
-            // making temp RGBTRIPLE struct for moving pixels
             RGBTRIPLE tmp;
             tmp = image[i][j];
             image[i][j] = image[i][width - j - 1];
@@ -77,7 +74,6 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
 {
     RGBTRIPLE copy[height][width];
     float averageRed, averageGreen, averageBlue;
-    // we make a copy of original image so we can take original values of pixels from it
     for (int r = 0; r < height; r++)
     {
         for (int c = 0; c < width; c++)
@@ -92,7 +88,6 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
     {
         for (int w = 0; w < width; w++)
         {
-            //if pixel is in corner
             if (w == 0 && h == 0)
             {
                 averageRed = (float)(copy[h][w].rgbtRed + copy[h][w + 1].rgbtRed + copy[h + 1][w].rgbtRed + copy[h + 1][w + 1].rgbtRed) / 4;

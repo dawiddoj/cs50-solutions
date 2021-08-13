@@ -179,7 +179,7 @@ void sort_pairs(void)
     return;
 }
 
-// check for cycle so locking pairs can be done without any problem
+// Check for cycle so locking pairs can be done without any problem
 bool has_cycle(int winner, int loser)
 {
     while (winner != -1 && winner != loser)

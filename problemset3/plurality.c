@@ -25,14 +25,12 @@ void print_winner(void);
 
 int main(int argc, string argv[])
 {
-    // Check for invalid usage
     if (argc < 2)
     {
         printf("Usage: plurality [candidate ...]\n");
         return 1;
     }
 
-    // Populate array of candidates
     candidate_count = argc - 1;
     if (candidate_count > MAX)
     {
@@ -47,19 +45,16 @@ int main(int argc, string argv[])
 
     int voter_count = get_int("Number of voters: ");
 
-    // Loop over all voters
     for (int i = 0; i < voter_count; i++)
     {
         string name = get_string("Vote: ");
 
-        // Check for invalid vote
         if (!vote(name))
         {
             printf("Invalid vote.\n");
         }
     }
 
-    // Display winner of election
     print_winner();
 }
 
@@ -80,17 +75,17 @@ bool vote(string name)
 // Print the winner (or winners) of the election
 void print_winner(void)
 {
-    int counter = 0; // counter for biggest number of votes
+    int counter = 0;
     for (int i = 0; i < candidate_count; i++)
     {
-        if (candidates[i].votes > counter) // we look for biggest number of votes in arrays
+        if (candidates[i].votes > counter)
         {
             counter = candidates[i].votes;
         }
     }
     for (int i = 0; i < candidate_count; i++)
     {
-        if (counter == candidates[i].votes) // if candidate has the biggest number of votes his name is printed, it handles ties too
+        if (counter == candidates[i].votes)
         {
             printf("%s\n", candidates[i].name);
         }

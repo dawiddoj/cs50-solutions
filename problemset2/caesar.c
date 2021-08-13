@@ -6,14 +6,12 @@
 
 /* program that is encrypting messages using caesar cipher */
 
-string cypher(char text[], int key); /* prototype */
+string cypher(char text[], int key);
 
 int main(int argc, string argv[])
 {
-    /* early check if user inputs command-line argument */
     if (argc == 2)
     {
-        /* check if input from user is indeed number, not letters */
         int length = strlen(argv[1]);
         int control = 0;
         int check = 0;
@@ -27,13 +25,11 @@ int main(int argc, string argv[])
         }
         if (length == control)
         {
-            /* knowing that string that we get from user is number we convert that to integrer */
             int key = atoi(argv[1]);
-            /* getting string from user that is going to be cyphered */
             char plaintext[100];
             string copy = get_string("plaintext: ");
-            strcpy(plaintext, copy); /* copying string to array of chars that we made */
-            printf("ciphertext: %s\n", cypher(plaintext, key)); /* calling function */
+            strcpy(plaintext, copy); 
+            printf("ciphertext: %s\n", cypher(plaintext, key));
             return 0;
         }
         else
@@ -51,18 +47,18 @@ int main(int argc, string argv[])
 
 string cypher(char text[], int key)
 {
-    char ch; /* used for purpose of modification of every character in array */
+    char ch;
     for (int i = 0; text[i] != '\0'; i++)
     {
         ch = text[i];
         if (islower(ch))
         {
-            ch = ((text[i] - 'a') + key) % 26 + 'a'; /* modulo used to wrap around from z to a */
+            ch = ((text[i] - 'a') + key) % 26 + 'a';
             text[i] = ch;
         }
         else if (isupper(ch))
         {
-            ch = ((text[i] - 'A') + key) % 26 + 'A'; /* modulo used to wrap around from Z to A */
+            ch = ((text[i] - 'A') + key) % 26 + 'A';
             text[i] = ch;
         }
     }

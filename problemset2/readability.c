@@ -11,9 +11,7 @@ int main(void)
 {
     string text[1];
     text[zero] = get_string("Text: ");
-    /* string length */
     int length = strlen(text[zero]);
-    /* calculating amount of letters, words and sentences in text */
     int words = zero;
     for (int i = zero; i < length; i++)
     {
@@ -22,7 +20,6 @@ int main(void)
             words++;
         }
     }
-    /* because of the way that i am obtaining amount of words i have to add one manually */
     words++;
     int sentences = zero;
     for (int i = zero; i < length; i++)
